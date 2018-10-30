@@ -11,7 +11,7 @@ This is a sample portfolio project which shows the use of React and React router
 
 IMPORTANT: Log into application with email **admin@admin.com** and password **admin**
 
-Click [here] to view live application.
+Click [here](https://friendly-meitner-83d6b4.netlify.com) to view live application.
 
 ## More about the project
 
