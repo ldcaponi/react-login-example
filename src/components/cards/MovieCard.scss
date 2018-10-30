@@ -7,7 +7,7 @@
   box-shadow: 0 3px 10px $color-grey;
   min-height: 200px;
   padding: 10px;
-  max-width: 300px;
+  width: 300px;
   text-align: center;
   vertical-align: top;
 
@@ -18,5 +18,21 @@
 
   &__image {
     width: 100%;
+  }
+
+  @media screen and (max-width: $break-small) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+    width: calc(50% - 40px);
+  }
+
+  @media screen and (min-width: $break-medium) and (max-width: $break-large) {
+    width: calc(33% - 60px);
+  }
+
+  @media screen and (min-width: $break-large) {
+    width: calc(25% - 80px);
   }
 }
