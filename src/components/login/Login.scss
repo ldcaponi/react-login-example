@@ -67,7 +67,7 @@
       top: 0;
       left: 0;
       height: 100%;
-      width: 100%;
+      width: 110%;
       transform: translateX(-100%);
       background-image: linear-gradient(
         to right,
@@ -84,5 +84,17 @@
         transform: translateX(0);
       }
     }
+  }
+
+  &__error-text {
+    font-size: 12px;
+    font-weight: 300;
+    color: $color-error;
+  }
+
+  &__loading-text {
+    font-size: 12px;
+    font-weight: 300;
+    color: $color-primary;
   }
 }

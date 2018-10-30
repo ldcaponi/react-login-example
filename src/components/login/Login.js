@@ -20,7 +20,7 @@ class Login extends React.Component {
     const { email, password } = this.state;
     return (
       <AuthConsumer>
-        {({ login, loginLoading }) => (
+        {({ login, loginLoading, loginError }) => (
           <div className="Login">
             <form className="LoginForm" onSubmit={e => this.submit(e, login)}>
               <h1 className="LoginForm__heading">Login</h1>
@@ -60,7 +60,17 @@ class Login extends React.Component {
                 </button>
               </div>
 
-              {loginLoading && <div className="LoginForm__group">LOADING</div>}
+              {loginLoading && (
+                <div className="LoginForm__group">
+                  <div className="LoginForm__loading-text">Loading...</div>
+                </div>
+              )}
+              {loginError &&
+                !loginLoading && (
+                  <div className="LoginForm__group">
+                    <div className="LoginForm__error-text">{loginError}</div>
+                  </div>
+                )}
             </form>
           </div>
         )}
