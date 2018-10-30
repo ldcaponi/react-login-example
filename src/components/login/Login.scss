@@ -1,0 +1,90 @@
+@import "../../sass/variables";
+
+.Login {
+  min-height: calc(100vh - 100px);
+  position: relative;
+}
+
+.LoginForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 3px 10px $color-grey;
+  padding: 50px 75px;
+
+  &__heading {
+    margin-bottom: 30px;
+    color: $color-primary;
+    font-weight: 300;
+    font-size: 40px;
+  }
+
+  &__group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  &__text-input {
+    padding: 10px 15px;
+    margin-top: 28px;
+    border: 1px solid $color-grey;
+    transition: box-shadow 0.25s;
+    min-width: 200px;
+
+    &:active,
+    &:focus {
+      outline: none;
+      box-shadow: 0 3px 10px $color-grey;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    color: darken($color-grey, 30);
+    font-weight: 300;
+  }
+
+  &__submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid $color-primary;
+    color: $color-primary;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    transition: all 0.25s;
+
+    &:active {
+      outline: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transform: translateX(-100%);
+      background-image: linear-gradient(
+        to right,
+        $color-primary,
+        $color-secondary
+      );
+      transition: all 0.25s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: white;
+      &:after {
+        transform: translateX(0);
+      }
+    }
+  }
+}

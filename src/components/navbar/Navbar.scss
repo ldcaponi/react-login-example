@@ -1,18 +1,58 @@
+@import "../../sass/variables";
+
 .Navbar {
   display: inline-block;
+  background-image: linear-gradient(to right, $color-primary, $color-secondary);
+  height: 100px;
   width: 100%;
 
   &__links {
     list-style: none;
     float: left;
+    margin-left: 20px;
 
     &-link {
       display: inline-block;
+      margin-right: 20px;
+      position: relative;
+
+      a {
+        text-decoration: none;
+        font-weight: 300;
+        color: white;
+        font-size: 18px;
+        display: block;
+        margin-top: 38px;
+        margin-bottom: 20px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+          left: 0;
+          height: 3px;
+          transform: scale(0);
+          background-color: white;
+          transition: all 0.2s;
+        }
+
+        &:hover {
+          &:after {
+            transform: scale(1);
+          }
+        }
+      }
     }
   }
 
   &__greeting {
     display: inline-block;
     float: right;
+    line-height: 100px;
+    margin-right: 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
   }
 }
