@@ -4,6 +4,7 @@ import Login from "./components/login/Login";
 import Home from "./components/home/Home";
 import Public from "./components/public/Public";
 import Navbar from "./components/navbar/Navbar";
+import { AuthConsumer } from "./context/Auth";
 import "./App.scss";
 
 class App extends React.Component {
@@ -12,7 +13,7 @@ class App extends React.Component {
       <div className="App">
         <Router>
           <div>
-            <Navbar />
+            <AuthConsumer>{state => <Navbar {...state} />}</AuthConsumer>
 
             <Route exact path="/" component={Public} />
             <Route exact path="/home" component={Home} />
