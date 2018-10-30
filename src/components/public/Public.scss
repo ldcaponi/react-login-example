@@ -1,0 +1,21 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+.Public {
+  position: relative;
+  min-height: calc(100vh - #{$navbar-height});
+
+  &__heading {
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
+
+  &__paragraph {
+    color: $color-grey;
+  }
+}
+
+.CenterBox {
+  @include centerVH;
+}

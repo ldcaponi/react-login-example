@@ -3,7 +3,7 @@
 .Navbar {
   display: inline-block;
   background-image: linear-gradient(to right, $color-primary, $color-secondary);
-  height: 100px;
+  height: $navbar-height;
   width: 100%;
 
   &__links {
@@ -49,7 +49,7 @@
   &__greeting {
     display: inline-block;
     float: right;
-    line-height: 100px;
+    line-height: $navbar-height;
     margin-right: 20px;
     color: white;
     font-weight: 700;
