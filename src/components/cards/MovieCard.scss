@@ -1,0 +1,22 @@
+@import "../../sass/variables";
+
+.MovieCard {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px $color-grey;
+  min-height: 200px;
+  padding: 10px;
+  max-width: 300px;
+  text-align: center;
+  vertical-align: top;
+
+  &__title {
+    color: darken($color-grey, 30);
+    margin: 20px 0;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

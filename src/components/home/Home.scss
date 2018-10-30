@@ -3,10 +3,15 @@
 
 .Home {
   min-height: calc(100vh - #{$navbar-height});
-  padding: 10px;
+  padding: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
 
   &__heading {
     color: $color-grey;
     font-weight: 300;
+    margin-bottom: 20px;
+    text-align: left;
   }
 }
