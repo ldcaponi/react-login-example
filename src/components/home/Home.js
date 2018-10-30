@@ -9,6 +9,7 @@ class Home extends React.Component {
     films: [],
     loading: true
   };
+
   componentDidMount() {
     fetchFilms()
       .then(res => {

@@ -5,6 +5,7 @@ const MovieCard = ({ film }) => {
   return (
     <div className="MovieCard">
       <div className="MovieCard__image-container">
+        <img className="MovieCard__play-button" src="/play.png" alt="Play" />
         <img
           className="MovieCard__image"
           src={film.images.image[0].src}

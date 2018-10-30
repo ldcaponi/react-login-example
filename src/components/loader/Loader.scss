@@ -1,5 +1,4 @@
 @import "../../sass/variables";
-@import "../../sass/mixins";
 
 .Loader {
   height: 100px;
@@ -11,8 +10,7 @@
     $color-primary,
     $color-secondary
   );
-  margin: 0 auto;
-  @include centerVH;
+  margin: 150px auto;
 }
 
 /*taken from Animate.css*/

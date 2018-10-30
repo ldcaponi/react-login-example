@@ -1,23 +1,52 @@
 @import "../../sass/variables";
+@import "../../sass/mixins";
 
 .MovieCard {
   display: inline-block;
   margin-right: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 3px 10px $color-grey;
-  min-height: 200px;
+
+  min-height: 250px;
   padding: 10px;
   width: 300px;
   text-align: center;
   vertical-align: top;
+  cursor: pointer;
 
   &__title {
     color: darken($color-grey, 30);
     margin: 20px 0;
   }
 
+  &__image-container {
+    position: relative;
+    overflow: hidden;
+  }
+
   &__image {
     width: 100%;
+    transform: scale(1.2);
+    transition: all 0.2s;
+  }
+
+  &__play-button {
+    height: 75px;
+    width: 75px;
+    transition: all 0.2s;
+    opacity: 0;
+    @include centerVH;
+  }
+
+  &:hover &__play-button {
+    height: 100px;
+    width: 100px;
+    opacity: 1;
+    z-index: 10;
+  }
+
+  &:hover &__image {
+    transform: scale(1);
+    filter: blur(3px) brightness(80%);
   }
 
   @media screen and (max-width: $break-small) {
