@@ -5,6 +5,8 @@ import Home from "./components/home/Home";
 import Public from "./components/public/Public";
 import Navbar from "./components/navbar/Navbar";
 import { AuthConsumer } from "./context/Auth";
+import mustBeLoggedIn from "./components/hoc/mustBeLoggedIn";
+import mustBeLoggedOut from "./components/hoc/mustBeLoggedOut";
 import "./App.scss";
 
 class App extends React.Component {
@@ -16,8 +18,8 @@ class App extends React.Component {
             <AuthConsumer>{state => <Navbar {...state} />}</AuthConsumer>
 
             <Route exact path="/" component={Public} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/home" component={mustBeLoggedIn(Home)} />
+            <Route exact path="/login" component={mustBeLoggedOut(Login)} />
           </div>
         </Router>
       </div>

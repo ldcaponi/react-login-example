@@ -24,23 +24,38 @@
         display: block;
         margin-top: 38px;
         margin-bottom: 20px;
+      }
 
-        &::after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          bottom: 0;
-          left: 0;
-          height: 3px;
-          transform: scale(0);
-          background-color: white;
-          transition: all 0.2s;
-        }
+      button {
+        color: white;
+        font-weight: 300;
+        font-size: 18px;
+        display: block;
+        margin-top: 38px;
+        margin-bottom: 20px;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        cursor: pointer;
+      }
 
-        &:hover {
-          &:after {
-            transform: scale(1);
-          }
+      & a::after,
+      & button::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        transform: scale(0);
+        background-color: white;
+        transition: all 0.2s;
+      }
+
+      &:hover {
+        & a::after,
+        & button::after {
+          transform: scale(1);
         }
       }
     }

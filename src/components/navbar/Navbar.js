@@ -21,9 +21,7 @@ const Navbar = ({ isLoggedIn, logout, name }) => {
         )}
         {isLoggedIn && (
           <li className="Navbar__links-link">
-            <a href="true" onClick={logout}>
-              Logout
-            </a>
+            <button onClick={logout}>Logout</button>
           </li>
         )}
       </ul>

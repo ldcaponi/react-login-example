@@ -1,6 +1,11 @@
 import React from "react";
 import { login } from "../services/AuthService";
-import { setToken, getDecodedToken } from "../services/Storage";
+import {
+  setToken,
+  getToken,
+  getDecodedToken,
+  destroyToken
+} from "../services/Storage";
 
 //creating a context to store login state information
 //could use redux for this, but context is fine
@@ -8,6 +13,15 @@ const AuthContext = React.createContext();
 
 class AuthProvider extends React.Component {
   state = { isLoggedIn: false, loginLoading: false, loginError: "", name: "" };
+
+  componentDidMount() {
+    const token = getToken();
+    if (token) {
+      //user is already logged in -- found token in local storage
+      //now login state will persist through browser refreshes
+      this.handleSuccess(token);
+    }
+  }
 
   loginFromContext = (email, password) => {
     //set loading to true, try to login
@@ -20,6 +34,7 @@ class AuthProvider extends React.Component {
   };
 
   logoutFromContext = () => {
+    destroyToken();
     this.setState({
       isLoggedIn: false,
       name: ""
