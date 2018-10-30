@@ -1,5 +1,5 @@
 //simulate a http request
-const TIMEOUT = 2500;
+const TIMEOUT = 1500;
 
 const SUCCESS_TOKEN = {
   token:

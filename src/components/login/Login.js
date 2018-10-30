@@ -54,15 +54,17 @@ class Login extends React.Component {
                 </label>
               </div>
 
-              <div className="LoginForm__group">
-                <button className="LoginForm__submit-button" type="submit">
-                  Login
-                </button>
-              </div>
+              {!loginLoading && (
+                <div className="LoginForm__group">
+                  <button className="LoginForm__submit-button" type="submit">
+                    Login
+                  </button>
+                </div>
+              )}
 
               {loginLoading && (
                 <div className="LoginForm__group">
-                  <div className="LoginForm__loading-text">Loading...</div>
+                  <div className="LoginForm__loading-text">Logging In...</div>
                 </div>
               )}
               {loginError &&
