@@ -9,20 +9,22 @@ const AuthContext = React.createContext();
 class AuthProvider extends React.Component {
   state = { isLoggedIn: false, loginLoading: false, loginError: "", name: "" };
 
-  loginFromContext = (username, password) => {
+  loginFromContext = (email, password) => {
     //set loading to true, try to login
     this.setState({ loginLoading: true });
-    login(username, password)
+
+    //simulate http login
+    login(email, password)
       .then(({ token }) => this.handleSuccess(token))
       .catch(this.handleError);
   };
 
-  logoutFromContext() {
+  logoutFromContext = () => {
     this.setState({
       isLoggedIn: false,
       name: ""
     });
-  }
+  };
 
   handleSuccess = token => {
     //save token to localStorage

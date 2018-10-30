@@ -1,0 +1,18 @@
+.Navbar {
+  display: inline-block;
+  width: 100%;
+
+  &__links {
+    list-style: none;
+    float: left;
+
+    &-link {
+      display: inline-block;
+    }
+  }
+
+  &__greeting {
+    display: inline-block;
+    float: right;
+  }
+}
