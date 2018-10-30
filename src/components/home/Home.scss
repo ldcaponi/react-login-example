@@ -1,0 +1,12 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+.Home {
+  min-height: calc(100vh - #{$navbar-height});
+  padding: 10px;
+
+  &__heading {
+    color: $color-grey;
+    font-weight: 300;
+  }
+}
